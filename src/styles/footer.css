@@ -1,0 +1,38 @@
+.rewardShowcase {
+    display: inline-flex;
+    width: 100%;
+    align-items: center;
+}
+.child {
+    width: 50%;
+    color: #000;
+    align-items: center;
+    text-align: center;
+}
+
+.cutFree {
+    font-size: 68px;
+}
+
+.cutDescription {
+    font-size: 28px;
+}
+
+.discretion {
+    color: rgba(0, 0, 0, 0.568);
+    font-size: 18px;
+}
+
+.footer {
+    display: inline-flex;
+    width: 100%;
+}
+
+.sinbad {
+    text-align: right;
+    width: 50%;
+}
+
+.socialLinks {
+    width: 50%;
+}
