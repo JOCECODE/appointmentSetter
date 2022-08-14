@@ -1,4 +1,8 @@
 import Modules from "../components/modulesContainer";
+import Image from "next/image";
+import Clock from "../../public/icons/clock.png";
+import Customer from "../../public/icons/customer.png";
+import Notification from "../../public/icons/notification.png";
 
 export default function adminPage() {
   return (
@@ -15,10 +19,14 @@ export default function adminPage() {
 
           {/* Content Setup */}
           <div className="flex flex-row">
-            <div className="flex flex-col w-[25%] h-[96vh] bg-orange-500">left Side Div</div>
-            <div className="flex flex-col w-[75%] h-[96vh] bg-blue-500">
+            <div className="flex flex-col w-[15%] h-[96vh] items-center justify-center gap-10 bg-orange-500">
+                  <Image width={120} height={120} src={Clock}/>
+                  <Image width={120} height={120} src={Customer}/>
+                  <Image width={120} height={120} src={Notification}/>
+            </div>
+            <div className="flex flex-col w-[85%] h-[96vh] bg-blue-500">
               {/* Holds moduleTable */}
-
+                
                 <Modules/>
 
             </div>

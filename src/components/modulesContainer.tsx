@@ -1,4 +1,4 @@
-import Email from "../components/modules/emailModule";
+import Upcoming from "./modules/upcomingModule";
 import Customer from "../components/modules/customerModule";
 import Notification from "./modules/notificationModule";
 
