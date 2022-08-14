@@ -1,3 +1,5 @@
+import Modules from "../components/modulesContainer";
+
 export default function adminPage() {
   return (
     <>
@@ -14,7 +16,12 @@ export default function adminPage() {
           {/* Content Setup */}
           <div className="flex flex-row">
             <div className="flex flex-col w-[25%] h-[96vh] bg-orange-500">left Side Div</div>
-            <div className="flex flex-col w-[75%] h-[96vh] bg-blue-500">right side</div>
+            <div className="flex flex-col w-[75%] h-[96vh] bg-blue-500">
+              {/* Holds moduleTable */}
+
+                <Modules/>
+
+            </div>
 
           </div>
       </div>
