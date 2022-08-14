@@ -1,4 +1,3 @@
-import Modules from "../components/modulesContainer";
 import Image from "next/image";
 import Clock from "../../public/icons/clock.png";
 import Customer from "../../public/icons/customer.png";
@@ -10,17 +9,16 @@ import React, {useState} from "react";
 
 
 export default function adminPage() {
-  
+const [moduleName, setModuleName] = useState("Select A Module");
   // gets the id of the selected image button
   const buttonHandler = (event: React.MouseEvent<HTMLImageElement>) => {
+
     event.stopPropagation();
     
     const img = event.currentTarget;
-    console.log(
-      "Element name: ",
-      img.id
-    );
+    setModuleName(img.id);
   };
+
   return (
     <>
       <div id="adminParent" className=" h-[100vh] w-[100wh] bg-red-600">
@@ -45,9 +43,7 @@ export default function adminPage() {
                 
                  <div className="flex flex-row w-[100%] h-[100%] p-5">
             <div className="flex flex-col bg-white w-[100%] h-[100%]">
-                {/* Theres is going to be 3 buttons on the left side div 
-                     on click, it will display the selected module. */}
-                     <h2 className="self-center">MODULE NAME</h2>
+                     <h2 id={moduleName} className="self-center">{moduleName}</h2>
                      <br/>
                      <br/>
                      <div className="bg-purple-600 h-[100%] w-[100%] text-center"><p>actual module contents</p></div>
