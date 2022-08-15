@@ -1,93 +1,78 @@
+import Link from 'next/link';
+import { useState } from 'react';
 import Image from "next/image";
-import Scissors from "../../public/icons/scissors.png";
+import NavIcon from "../../public/icons/navIcon.png";
 
-export default function Navbar(){
-    return (
+export const Navbar = () => {
+  const [active, setActive] = useState(false);
 
-        <>
-        <header id="navContainer">
-            <h1 id="title">Alyssa Boutique</h1>
-        <nav id="navEdit">
-            <ul id="ulEdit">
-                <li id="liEdit">
-                    <a id="aEdit" href="#AboutUs">About Us</a>
-                </li>
-                <li id="liEdit">
-                    <a  id="aEdit" href="#online-reputation-management">Honors Program</a>
-                </li>
-                <li id="liEdit">
-                    <a id="aEdit" href="#social-media-marketing">Login/SignUp</a>
-                </li>
-            </ul>
-        </nav>
-        </header>
-        <div id="heroImage"/>
+  const handleClick = () => {
+    setActive(!active);
+  };
 
-        {/* midContainer */}
-        <div id="midContainer">
-            
-            <div id="cardContainer">
-            <div id="card">
-            <h4><b>Book An Appointment Today!</b></h4> 
-            <p>When do you want to come?</p> 
-            <p>Select a day</p>
-            <input/>
-            <p>Select a time</p>
-            <input/>
-            <br/>
-            <br/>
-            <button id="bookNow" type="submit">Book Now</button>
-            <p><b>* Appointments require a 50% deposit to hold the appointment time slot. For full refunds, you MUST cancel before 48 hours from your appointment date.</b></p>
+  return (
+    <>
+      <nav className='flex items-center flex-wrap bg-[#333333] p-3 '>
+        <Link href='/'>
+          <a className='inline-flex items-center p-2 mr-4 '>
+
+                <Image className="mr-3" src={NavIcon} width={48} height={48}/>
+            <span className='text-xl text-white font-bold uppercase tracking-wide ml-3 mt-3'>
+              Alyssa Boutique
+            </span>
+          </a>
+        </Link>
+        <button
+          className=' inline-flex p-3  hover:bg-[#1A181A] rounded lg:hidden text-white ml-auto hover:text-white outline-none'
+          onClick={handleClick}
+        >
+          <svg
+            className='w-6 h-6'
+            fill='none'
+            stroke='currentColor'
+            viewBox='0 0 24 24'
+            xmlns='http://www.w3.org/2000/svg'
+          >
+            <path
+              strokeLinecap='round'
+              strokeLinejoin='round'
+              strokeWidth={2}
+              d='M4 6h16M4 12h16M4 18h16'
+            />
+          </svg>
+        </button>
+        {/*Note that in this div we will use a ternary operator to decide whether or not to display the content of the div  */}
+        <div
+          className={`${
+            active ? '' : 'hidden'
+          }   w-full lg:inline-flex lg:flex-grow lg:w-auto`}
+        >
+          <div className='lg:inline-flex lg:flex-row lg:ml-auto lg:w-auto w-full lg:items-center items-start  flex flex-col lg:h-auto'>
+            <Link href='/'>
+              <a className='lg:inline-flex lg:w-auto w-full px-3 py-2 rounded text-white font-bold items-center justify-center hover:bg-[#1A181A] hover:text-white mt-3'>
+                Home
+              </a>
+            </Link>
+            <Link href='/'>
+              <a className='lg:inline-flex lg:w-auto w-full px-3 py-2 rounded text-white font-bold items-center justify-center hover:bg-[#1A181A] hover:text-white mt-3'>
+                Honors Program
+              </a>
+            </Link>
+            <Link href='/'>
+              <a className='lg:inline-flex lg:w-auto w-full px-3 py-2 rounded text-white font-bold items-center justify-center hover:bg-[#1A181A] hover:text-white mt-3'>
+                About us
+              </a>
+            </Link>
+            <Link href='/'>
+              <a className='lg:inline-flex lg:w-auto w-full px-3 py-2 rounded text-white font-bold items-center justify-center hover:bg-[#1A181A] hover:text-white mt-3'>
+                Login/SignUp
+              </a>
+            </Link>
+          </div>
         </div>
-        </div>
-        </div>
-        <div id="main">
-            <div id="left">
-                <div id="flexContainer">
-                    <div id="row">
-                             <div id="col">
-                             <div id="circle">
-                                
-                         <Image id="icons" width={80} height={80}src={Scissors}/>
-                         <br/>
-                        <h4 id="hairService">Hairstyles</h4>
-                        <p id="description">"providing quality cuts to how you want"</p>
-                            </div>
-                        </div>
-                          <div id="col">
-                             <div id="circle">
-                         <Image id="icons" width={80} height={80}src={Scissors}/>
-                         <br/>
-                        <h4 id="hairService">Haircuts</h4>
-                        <p id="description">"providing quality cuts to how you want"</p>
-                            </div>
-                    </div>
-                    </div>
-                    <div id="row">
-                          <div id="col">
-                            <h2 id="servicesTitle"><b>SERVICES</b></h2>
-                        </div>
-                    </div>
-                    <div id="row">
-                      
-                         <div id="col">
-                            <div id="circle">
-                                
-                         <Image id="icons" width={80} height={80}src={Scissors}/>
-                         <br/>
-                        <h4 id="hairService">Hair Color</h4>
-                        <p id="description">"providing quality cuts to how you want"</p>
-                            </div>
-                    </div>
-                    </div>
-                    </div>
-                </div>
-
-            </div>
-            <div id="right"></div>
-            
-
-        </>
-
-    )
+      </nav>
+    </>
+  );
 };
+
+export default Navbar;

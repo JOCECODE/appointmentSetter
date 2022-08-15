@@ -1,6 +1,7 @@
 import Head from 'next/head';
-import Navbar from "../components/Navbar";
+import Homepage from "../components/Homepage";
 import Footer from "../components/Footer";
+import Navbar from "../components/Navbar";
 
 // import Layout, { siteTitle } from '../../components/layout';
 
@@ -12,7 +13,8 @@ export default function Home() {
       <Head>
         <title>Alyssa Appointment</title>
       </Head>
-      <Navbar />
+      <Navbar/>
+      <Homepage />
       <Footer/>
 
     </>
