@@ -4,6 +4,7 @@ import Alyssa from "../../public/images/alyssaSmoking.jpg";
 export default function about() {
     return(
         <>
+
             {/* May need a navbar but I recommend making one nav bar and having it as a reusable component */}
             <div id="aboutBgImage" className="flex flex-row w-[100vw] h-[100vh]">
                    <div className="flex-col w-[50%] h-[auto] font-bold text-left text-black text-[40px] mt-[4.5em]">
