@@ -1,3 +1,141 @@
+#heroImage {
+    display: flex;
+    height: 90vh;
+    width: 100%;
+    background-image: url("../../public/images/joker.jpg");
+    background-size: fill;
+}
+
+
+/* Card Container with booking appointment and time */
+#cardContainer {
+    
+    display: flex;
+    flex: row;
+    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2);
+    transition: 0.3s;
+    width: 30%;
+    background-color: white;
+    text-align: center;
+    border-radius: 10px;
+    color: black;
+    position: absolute;
+    right: 30px;
+    bottom: -352px;
+}
+
+/* #cardContainer:hover {
+    box-shadow: 0 8px 16px 0 rgba(0, 0, 0, 0.2);
+} */
+
+#card {
+    padding: 60px 30px;
+}
+/* 
+#midContainer {
+    position: relative;
+
+} */
+
+/* CSS */
+#bookNow {
+    background: #5E5DF0;
+    border-radius: 999px;
+    box-shadow: #5E5DF0 0 10px 20px -10px;
+    box-sizing: border-box;
+    color: #FFFFFF;
+    cursor: pointer;
+    font-family: Inter, Helvetica, "Apple Color Emoji", "Segoe UI Emoji", NotoColorEmoji, "Noto Color Emoji", "Segoe UI Symbol", "Android Emoji", EmojiSymbols, -apple-system, system-ui, "Segoe UI", Roboto, "Helvetica Neue", "Noto Sans", sans-serif;
+    font-size: 1.6em;
+    font-weight: 700;
+    line-height: 1.33333333em;
+    opacity: 1;
+    outline: 0 solid transparent;
+    padding: 8px 18px;
+    user-select: none;
+    -webkit-user-select: none;
+    touch-action: manipulation;
+    width: fit-content;
+    word-break: break-word;
+    border: 0;
+}
+
+#main {
+    display: flex;
+    width: 100%;
+    /* width: 100%;
+    padding-bottom: 75%; */
+}
+
+#right {
+    width: 100%;
+    height: 100%;
+    background-color: blue;
+}
+
+
+
+#row {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    width: 100%;
+    align-items: center;
+}
+
+#col {
+    display: flex;
+    flex-direction: column;
+    flex-basis: 100%;
+    flex: 1;
+    text-align: center;
+    align-items: center;
+    padding: 15px;
+
+}
+
+#circle {
+    height: 300px;
+    width: 300px;
+    padding: 36px;
+    border-radius: 50%;
+    border: 2px solid #5E5DF0;
+    margin-bottom: 10px;
+}
+
+#servicesTitle {
+    font-size: 4em;
+}
+
+#description {
+    font-size: 1.38em;
+}
+
+#hairService {
+   font-size: 2.2em;
+}
+
+.bookAppointment {
+    font-size: 2.1em;
+    margin: 10px;
+}
+
+.whenYouCome {
+    font-size: 1.4em;
+    margin: 10px;
+}
+
+.select {
+    font-size: 1.6em;
+    font-weight: 500;
+    margin: 10px;
+}
+
+.notice {
+    font-size: 1.2em;
+    color: rgba(0, 0, 0, 0.726);
+}
+
 .rewardShowcase {
     display: inline-flex;
     width: 100%;
@@ -5,27 +143,27 @@
 }
 .child {
     width: 50%;
-    color: #000;
     align-items: center;
     text-align: center;
 }
 
 .cutFree {
-    font-size: 68px;
+    font-size: 3.77777778em;
 }
 
 .cutDescription {
-    font-size: 28px;
+    font-size: 1.5555555555555556em;
 }
 
 .discretion {
     color: rgba(0, 0, 0, 0.568);
-    font-size: 18px;
+    font-size: 1em;
 }
 
 .footer {
     display: inline-flex;
     width: 100%;
+    margin-top: 14%;
 }
 
 .sinbad {
@@ -35,4 +173,118 @@
 
 .socialLinks {
     width: 50%;
+}
+
+#star-five {
+    margin: 50px 0;
+    position: relative;
+    display: block;
+    color: red;
+    width: 0px;
+    height: 0px;
+    border-right: 100px solid transparent;
+    border-bottom: 70px solid red;
+    border-left: 100px solid transparent;
+    transform: rotate(35deg);
+}
+
+#star-five:before {
+    border-bottom: 80px solid red;
+    border-left: 30px solid transparent;
+    border-right: 30px solid transparent;
+    position: absolute;
+    height: 0;
+    width: 0;
+    top: -45px;
+    left: -65px;
+    display: block;
+    content: '';
+    transform: rotate(-35deg);
+}
+
+#star-five:after {
+    position: absolute;
+    display: block;
+    color: red;
+    top: 3px;
+    left: -105px;
+    width: 0px;
+    height: 0px;
+    border-right: 100px solid transparent;
+    border-bottom: 70px solid red;
+    border-left: 100px solid transparent;
+    transform: rotate(-70deg);
+    content: '';
+}
+
+
+@media (max-width: 2000px) {
+    #cardContainer {}
+
+    #left {
+        float: left;
+        width: 70%;
+        height: 100%;
+    }
+}
+
+@media (max-width: 1279px) {
+    #cardContainer {
+      
+        position: unset;
+        height: 85%;
+        width: 83%;
+        margin-top: 1.5%;
+        margin-right: 1.5%;
+
+
+
+
+    }
+
+    #left {
+        float: left;
+        width: 70%;
+        height: 100%;
+    }
+}
+
+@media (max-width: 942px) {
+    #cardContainer {
+       
+        height: 85%;
+        width: 83%;
+        margin-top: 1.5%;
+        margin-right: 1.5%;
+
+    }
+}
+
+/* @media (max-width: 1023) {
+        
+} */
+
+@media (max-width: 660px) {
+    #main {
+        flex-flow: column-reverse;
+    }
+
+    #cardContainer {
+    
+        height: 85%;
+        width: 90%;
+        margin: 5%;
+
+    }
+    .rewardShowcase {
+        display: block;
+    }
+
+    #left {
+        width: 100%;
+    }
+
+    .child {
+        width: 100%;
+    }
 }

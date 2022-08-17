@@ -17,8 +17,8 @@ export const Navbar = () => {
           <a className='inline-flex items-center p-2 mr-4 '>
 
                 <Image className="mr-3" src={NavIcon} width={48} height={48}/>
-            <span className='text-xl text-white font-bold uppercase tracking-wide ml-3 mt-3'>
-              Alyssa Boutique
+            <span className='text-[1.7em] text-white font-bold uppercase tracking-wide ml-3 mt-3'>
+              Salon Peaches
             </span>
           </a>
         </Link>
@@ -47,23 +47,23 @@ export const Navbar = () => {
             active ? '' : 'hidden'
           }   w-full lg:inline-flex lg:flex-grow lg:w-auto`}
         >
-          <div className='lg:inline-flex lg:flex-row lg:ml-auto lg:w-auto w-full lg:items-center items-start  flex flex-col lg:h-auto'>
+          <div className='text-xl lg:inline-flex lg:flex-row lg:ml-auto lg:w-auto w-full lg:items-center items-start  flex flex-col lg:h-auto'>
             <Link href='/'>
               <a className='lg:inline-flex lg:w-auto w-full px-3 py-2 rounded text-white font-bold items-center justify-center hover:bg-[#1A181A] hover:text-white mt-3'>
                 Home
               </a>
             </Link>
-            <Link href='/'>
+            <Link href='/honors'>
               <a className='lg:inline-flex lg:w-auto w-full px-3 py-2 rounded text-white font-bold items-center justify-center hover:bg-[#1A181A] hover:text-white mt-3'>
                 Honors Program
               </a>
             </Link>
-            <Link href='/'>
+            <Link href='/about'>
               <a className='lg:inline-flex lg:w-auto w-full px-3 py-2 rounded text-white font-bold items-center justify-center hover:bg-[#1A181A] hover:text-white mt-3'>
                 About us
               </a>
             </Link>
-            <Link href='/'>
+            <Link href='/login'>
               <a className='lg:inline-flex lg:w-auto w-full px-3 py-2 rounded text-white font-bold items-center justify-center hover:bg-[#1A181A] hover:text-white mt-3'>
                 Login/SignUp
               </a>

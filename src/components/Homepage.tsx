@@ -6,27 +6,11 @@ export default function Homepage(){
 
         <>
         
-        <div id="heroImage"/>
-
-        {/* midContainer */}
-        <div id="midContainer">
-            
-            <div id="cardContainer">
-            <div id="card">
-            <h4><b>Book An Appointment Today!</b></h4> 
-            <p>When do you want to come?</p> 
-            <p>Select a day</p>
-            <input/>
-            <p>Select a time</p>
-            <input/>
-            <br/>
-            <br/>
-            <button id="bookNow" type="submit">Book Now</button>
-            <p><b>* Appointments require a 50% deposit to hold the appointment time slot. For full refunds, you MUST cancel before 48 hours from your appointment date.</b></p>
-        </div>
-        </div>
-        </div>
+        <div id="heroImage"> 
+            </div>
+                    
         <div id="main">
+
             <div id="left">
                 <div id="flexContainer">
                     <div id="row">
@@ -66,13 +50,31 @@ export default function Homepage(){
                     </div>
                     </div>
                     </div>
-                </div>
-
             </div>
+
+          {/* card container is right here on smaller devices it should stay on the right side */}
+        <div id="cardContainer" className="">
+            <div id="card">
+            <h4 className="bookAppointment"><b>Book An Appointment Today!</b></h4> 
+            <p className="whenYouCome">When do you want to come?</p> 
+            <p className="select">Select a day</p>
+            <input className=" border-black border-2 border-solid"/>
+            <p className="select">Select a time</p>
+            <input className=" border-black border-2 border-solid"/>
+            <br/>
+            <br/>
+            <button id="bookNow" type="submit">Book Now</button>
+            <br/>
+            <br/>
+            <p className="notice"><b>* Appointments require a 50% deposit to hold the appointment time slot. For full refunds, you MUST cancel before 48 hours from your appointment date.</b></p>
+        </div>
+            </div>
+
+{/* Main Closing Div */}
+</div>
+           
             <div id="right"></div>
             
-
         </>
-
     )
 };
