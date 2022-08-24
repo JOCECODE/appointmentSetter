@@ -2,7 +2,7 @@ export default function honors() {
     return(
         <>
 
-        <div id="star-five"/>
+        <div className="text-center" id="star-five"/>
         </>
     )
 }
