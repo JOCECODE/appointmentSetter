@@ -3,13 +3,15 @@ import Clock from "../../public/icons/clock.png";
 import Customer from "../../public/icons/customer.png";
 import Notification from "../../public/icons/notification.png";
 import React, {useState} from "react";
-// import UpcomingModule from "./modules/upcomingModule";
-// import CustomerModule from "../components/modules/customerModule";
+import UpcomingModule from "../components/modules/upcomingModule";
+import CustomerModule from "../components/modules/customerModule";
 import NotificationModule from "../components/modules/notificationModule";
 
 
 export default function adminPage() {
-const [moduleName, setModuleName] = useState("Select A Module");
+  
+const [moduleState, setModuleState] = useState(<CustomerModule/>);
+const [moduleName, setModuleName] = useState("Customers");
   // gets the id of the selected image button
   const buttonHandler = (event: React.MouseEvent<HTMLImageElement>) => {
 
@@ -17,8 +19,21 @@ const [moduleName, setModuleName] = useState("Select A Module");
     
     const img = event.currentTarget;
     setModuleName(img.id);
-  };
+    if (img.id === "clock"){
+      setModuleState(<NotificationModule/>);
+    }
 
+       if (img.id === "notification"){
+        
+      setModuleState(<UpcomingModule/>);
+    }
+      if (img.id === "customer"){
+        setModuleState(<CustomerModule/>);
+
+      }
+
+  };
+  
   return (
     <>
       <div id="adminParent" className=" h-[100vh] w-[100wh] bg-red-600">
@@ -51,7 +66,7 @@ const [moduleName, setModuleName] = useState("Select A Module");
                         Also, GitHub Issue regarding populating module is right here,
                         Modify code page as needed.
                       */}
-                      <NotificationModule/>
+                      <div onClick={buttonHandler} className="moduleDisplay">{moduleState}</div>
                      </div>
             </div>
         </div>

@@ -1,6 +1,6 @@
 #heroImage {
     display: flex;
-    height: 90vh;
+    height: 80vh;
     width: 100%;
     background-image: url("../../public/images/joker.jpg");
     background-size: fill;
@@ -179,17 +179,17 @@
     margin: 50px 0;
     position: relative;
     display: block;
-    color: red;
+    color: yellow;
     width: 0px;
     height: 0px;
     border-right: 100px solid transparent;
-    border-bottom: 70px solid red;
+    border-bottom: 70px solid yellow;
     border-left: 100px solid transparent;
     transform: rotate(35deg);
 }
 
 #star-five:before {
-    border-bottom: 80px solid red;
+    border-bottom: 80px solid yellow;
     border-left: 30px solid transparent;
     border-right: 30px solid transparent;
     position: absolute;
@@ -205,13 +205,13 @@
 #star-five:after {
     position: absolute;
     display: block;
-    color: red;
+    color: yellow;
     top: 3px;
     left: -105px;
     width: 0px;
     height: 0px;
     border-right: 100px solid transparent;
-    border-bottom: 70px solid red;
+    border-bottom: 70px solid yellow;
     border-left: 100px solid transparent;
     transform: rotate(-70deg);
     content: '';
@@ -219,7 +219,7 @@
 
 
 @media (max-width: 2000px) {
-    #cardContainer {}
+    /* #cardContainer {} */
 
     #left {
         float: left;
