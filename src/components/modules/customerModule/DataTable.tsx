@@ -9,9 +9,9 @@ export default function DataTable() {
         { name: "FirstName", width: "10%" },
         { name: "lastName", width: "10%" },
         { name: "Number", width: "10%" },
-        { name: "Address", width: "10%" },
+        { name: "Address", width: "20%" },
         { name: "Return reminder", width: "10%" },
-        {name: "Appointments", width: "10%"}
+        {name: "Appointments", width: "20%"}
     ];
 
     // This would be replaced with data from the database
@@ -56,7 +56,7 @@ export default function DataTable() {
         <tbody>
             {/* as of right now the data hard coded eventually it will display the 
                 data that is bein returned from the database */}
-            {users.map(({firstName, lastName, phoneNumber, reminder, appointments}) => {
+            {users.map(({firstName, lastName, phoneNumber, address, reminder, appointments}) => {
                 return(
                    <tr key={firstName}>
                         <td data-th="firstName">
@@ -69,13 +69,13 @@ export default function DataTable() {
                             {phoneNumber}
                         </td>
                         <td data-th="address">
-                            {firstName}
+                            {address}
                         </td>
                         <td data-th="reminder">
                             {reminder}
                         </td>
                         <td data-th="appointments">
-                            {appointments[0]}
+                            {`${appointments[0]} ${appointments[1]} ${appointments[2]}`}
                         </td>
                    </tr>
                 );
