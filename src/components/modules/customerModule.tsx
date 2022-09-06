@@ -1,7 +1,9 @@
+import DataTable from "./customerModule/DataTable";
+
 export default function customerModule() {
     return(
         <>
-            Employee Module
+           <DataTable/>
         </>
     )
 }

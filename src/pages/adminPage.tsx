@@ -11,7 +11,7 @@ import NotificationModule from "../components/modules/notificationModule";
 export default function adminPage() {
   
 const [moduleState, setModuleState] = useState(<CustomerModule/>);
-const [moduleName, setModuleName] = useState("Customers");
+const [moduleName, setModuleName] = useState("customer");
   // gets the id of the selected image button
   const buttonHandler = (event: React.MouseEvent<HTMLImageElement>) => {
 
@@ -66,7 +66,7 @@ const [moduleName, setModuleName] = useState("Customers");
                         Also, GitHub Issue regarding populating module is right here,
                         Modify code page as needed.
                       */}
-                      <div onClick={buttonHandler} className="moduleDisplay">{moduleState}</div>
+                      <div className="moduleDisplay">{moduleState}</div>
                      </div>
             </div>
         </div>
