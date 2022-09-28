@@ -1,0 +1,39 @@
+generator client {
+  provider = "prisma-client-js"
+}
+
+datasource db {
+  provider = "mysql"
+  url      = env("DATABASE_URL")
+}
+
+model department {
+  department_id Int    @id @default(autoincrement())
+  name          String @db.VarChar(30)
+  role          role[]
+}
+
+model employee {
+  employee_id    Int        @id @default(autoincrement())
+  first_name     String     @db.VarChar(30)
+  last_name      String     @db.VarChar(30)
+  role_id        Int
+  manager_id     Int?
+  employee       employee?  @relation("employeeToemployee", fields: [manager_id], references: [employee_id], onDelete: NoAction, onUpdate: NoAction, map: "FK_ManagerEmployee")
+  role           role       @relation(fields: [role_id], references: [role_id], onDelete: NoAction, onUpdate: NoAction, map: "FK_RoleEmployee")
+  other_employee employee[] @relation("employeeToemployee")
+
+  @@index([manager_id], map: "FK_ManagerEmployee")
+  @@index([role_id], map: "FK_RoleEmployee")
+}
+
+model role {
+  role_id       Int        @id @default(autoincrement())
+  title         String     @db.VarChar(30)
+  salary        Decimal    @db.Decimal(9, 2)
+  department_id Int
+  department    department @relation(fields: [department_id], references: [department_id], onDelete: NoAction, onUpdate: NoAction, map: "FK_DepartmentRole")
+  employee      employee[]
+
+  @@index([department_id], map: "FK_DepartmentRole")
+}
