@@ -4,7 +4,7 @@ import Scissors from "../../public/icons/scissors.png";
 import '@hassanmojab/react-modern-calendar-datepicker/lib/DatePicker.css';
 import {Calendar, utils, DayValue} from "@hassanmojab/react-modern-calendar-datepicker";
 
-export default function Homepage(){
+export const Homepage = () =>{
 
     const [selectedDay, setSelectedDay] = useState<DayValue>();
     
@@ -87,3 +87,5 @@ export default function Homepage(){
         </>
     )
 };
+
+export default Homepage;
