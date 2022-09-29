@@ -24,7 +24,7 @@ async function main() {
 
       // query returns all employee from the employee table
   const allEmployees = await prisma.employee.findMany()
-  console.dir(allEmployees, {depth: null})
+  console.dir(allEmployees, {depth: null});
 
 }
 

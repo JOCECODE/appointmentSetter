@@ -1,7 +1,8 @@
 import Image from "next/image";
 import Alyssa from "../../public/images/alyssaSmoking.jpg";
+import { NextPage } from "next";
 
-export default function about() {
+export const About:NextPage = (props) => {
     return(
         <>
 
@@ -20,7 +21,7 @@ export default function about() {
                         <div className="frame">
                         <div className="border">
                             <div className="image">
-                            <Image id="alyssaSmoking" src={Alyssa} width={500} height={500} />
+                            <Image alt="alyssaSmokingImage" id="alyssaSmoking" src={Alyssa} width={500} height={500} />
                             </div>
                             <div className="textFrame">Alyssa Valadez</div>
                         </div>
@@ -30,3 +31,5 @@ export default function about() {
         </>
     )
 }
+
+export default About;

@@ -16,7 +16,7 @@ export const Navbar = () => {
         <Link href='/'>
           <a className='inline-flex items-center p-2 mr-4 '>
 
-                <Image className="mr-3" src={NavIcon} width={48} height={48}/>
+                <Image alt="NavIcon" className="mr-3" src={NavIcon} width={48} height={48}/>
             <span className='text-[1.7em] text-white font-bold uppercase tracking-wide ml-3 mt-3'>
               Salon Peaches
             </span>
