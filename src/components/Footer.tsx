@@ -3,7 +3,7 @@ import Stars from "../../public/images/3stars.jpg";
 import Twitter from "../../public/icons/twitter.png";
 import Instagram from "../../public/icons/instagram.png";
 
-export default function Footer() {
+export const Footer = () => {
     return (
         <>
             <div className="rewardShowcase">
@@ -27,3 +27,5 @@ export default function Footer() {
         </>
     )
 };
+
+export default Footer;
