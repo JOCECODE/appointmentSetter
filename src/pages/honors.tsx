@@ -1,4 +1,6 @@
-export default function honors() {
+import { NextPage } from "next";
+
+export const Honors:NextPage = (props) => {
     return(
         <>
 
@@ -6,3 +8,5 @@ export default function honors() {
         </>
     )
 }
+
+export default Honors;

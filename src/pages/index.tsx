@@ -1,11 +1,12 @@
 import Homepage from "../components/Homepage";
 import Footer from "../components/Footer";
+import { NextPage } from "next";
 
 
 // import Layout, { siteTitle } from '../../components/layout';
 
 
-export default function Home() {
+export const Home:NextPage = (props) => {
   return (
     <>
       <Homepage />
@@ -14,3 +15,5 @@ export default function Home() {
     </>
   );
 }
+
+export default Home;

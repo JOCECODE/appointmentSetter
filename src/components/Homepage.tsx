@@ -1,11 +1,12 @@
-import React, {useState} from 'react';
+import {useState} from 'react';
 import Image from "next/image";
 import Scissors from "../../public/icons/scissors.png";
-import {Calendar, utils, DayValue} from "react-modern-calendar-datepicker";
+import '@hassanmojab/react-modern-calendar-datepicker/lib/DatePicker.css';
+import {Calendar, utils, DayValue} from "@hassanmojab/react-modern-calendar-datepicker";
 
 export default function Homepage(){
 
-    const [selectedDay, setSelectedDay] = useState<DayValue>(null);
+    const [selectedDay, setSelectedDay] = useState<DayValue>();
     
     return (
 
@@ -25,7 +26,7 @@ export default function Homepage(){
                         <Image id="icons" alt="scissors png" width={80} height={80}src={Scissors}/>
                         <br/>
                         <h4 id="hairService">Hairstyles</h4>
-                        <p id="description">${`"providing quality cuts to how you want"`}</p>
+                        <p id="description">{`"providing quality cuts to how you want"`}</p>
                             </div>
                         </div>
                         <div id="col">
@@ -33,7 +34,7 @@ export default function Homepage(){
                         <Image id="icons" alt="scissors png" width={80} height={80}src={Scissors}/>
                         <br/>
                         <h4 id="hairService">Haircuts</h4>
-                        <p id="description">${`"providing quality cuts to how you want"`}</p>
+                        <p id="description">{`"providing quality cuts to how you want"`}</p>
                             </div>
                     </div>
                     </div>
@@ -50,7 +51,7 @@ export default function Homepage(){
                         <Image id="icons" alt="scissors png" width={80} height={80}src={Scissors}/>
                         <br/>
                         <h4 id="hairService">Hair Color</h4>
-                        <p id="description">${`"providing quality cuts to how you want"`}</p>
+                        <p id="description">{`"providing quality cuts to how you want"`}</p>
                             </div>
                     </div>
                     </div>
@@ -70,7 +71,7 @@ export default function Homepage(){
                 minimumDate={utils('en').getToday()}
                 shouldHighlightWeekends
             />
-            {/* print out selected day to see that its working */}
+            
             {
                 selectedDay ? ( <p>{selectedDay?.month}/{selectedDay?.day}/{selectedDay?.year}</p> ) : "" 
             }

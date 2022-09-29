@@ -6,9 +6,10 @@ import React, {useState} from "react";
 import UpcomingModule from "../components/modules/upcomingModule";
 import CustomerModule from "../components/modules/customerModule";
 import NotificationModule from "../components/modules/notificationModule";
+import { NextPage } from "next";
 
 
-export default function adminPage() {
+export const AdminPage:NextPage = (props) => {
   
 const [moduleState, setModuleState] = useState(<CustomerModule/>);
 const [moduleName, setModuleName] = useState("customer");
@@ -49,9 +50,9 @@ const [moduleName, setModuleName] = useState("customer");
           {/* Content Setup */}
           <div className="flex flex-row">
             <div className="flex flex-col w-[15%] h-[96vh] items-center justify-center gap-10 bg-orange-500">
-                  <Image className="cursor-pointer" id="clock" width={120} height={120} onClick={buttonHandler} src={Clock}/>
-                  <Image className="cursor-pointer" id="customer" width={120} height={120} onClick={buttonHandler}src={Customer}/>
-                  <Image className="cursor-pointer" id="notification" width={120} height={120} onClick={buttonHandler}src={Notification}/>
+                  <Image alt="clockIcon" className="cursor-pointer" id="clock" width={120} height={120} onClick={buttonHandler} src={Clock}/>
+                  <Image alt="customerIcon" className="cursor-pointer" id="customer" width={120} height={120} onClick={buttonHandler}src={Customer}/>
+                  <Image alt="notificationIcon" className="cursor-pointer" id="notification" width={120} height={120} onClick={buttonHandler}src={Notification}/>
             </div>
             <div className="flex flex-col w-[85%] h-[96vh] bg-blue-500">
               {/* Holds moduleTable */}
@@ -78,3 +79,5 @@ const [moduleName, setModuleName] = useState("customer");
     </>
   )
 }
+
+export default AdminPage;
