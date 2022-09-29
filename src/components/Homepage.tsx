@@ -1,7 +1,8 @@
 import {useState} from 'react';
 import Image from "next/image";
 import Scissors from "../../public/icons/scissors.png";
-import {Calendar, utils, DayValue} from "react-modern-calendar-datepicker";
+import '@hassanmojab/react-modern-calendar-datepicker/lib/DatePicker.css';
+import {Calendar, utils, DayValue} from "@hassanmojab/react-modern-calendar-datepicker";
 
 export default function Homepage(){
 
