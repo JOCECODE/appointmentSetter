@@ -7,33 +7,35 @@ datasource db {
   url      = env("DATABASE_URL")
 }
 
-model department {
-  department_id Int    @id @default(autoincrement())
-  name          String @db.VarChar(30)
-  role          role[]
+model admins {
+  id             Int      @id @default(autoincrement())
+  admin_username String   @db.VarChar(30)
+  pass_word      String   @db.Text
+  is_deleted     Boolean? @default(false)
 }
 
-model employee {
-  employee_id    Int        @id @default(autoincrement())
-  first_name     String     @db.VarChar(30)
-  last_name      String     @db.VarChar(30)
-  role_id        Int
-  manager_id     Int?
-  employee       employee?  @relation("employeeToemployee", fields: [manager_id], references: [employee_id], onDelete: NoAction, onUpdate: NoAction, map: "FK_ManagerEmployee")
-  role           role       @relation(fields: [role_id], references: [role_id], onDelete: NoAction, onUpdate: NoAction, map: "FK_RoleEmployee")
-  other_employee employee[] @relation("employeeToemployee")
+model appointments {
+  id            Int        @id @default(autoincrement())
+  customer_id   Int?
+  formulas      String     @db.Text
+  haircut       String     @db.Text
+  products_used String     @db.Text
+  reciept       String     @db.Text
+  is_deleted    Boolean?   @default(false)
+  customers     customers? @relation(fields: [customer_id], references: [id], onUpdate: NoAction, map: "appointments_ibfk_1")
 
-  @@index([manager_id], map: "FK_ManagerEmployee")
-  @@index([role_id], map: "FK_RoleEmployee")
+  @@index([customer_id], map: "customer_id")
 }
 
-model role {
-  role_id       Int        @id @default(autoincrement())
-  title         String     @db.VarChar(30)
-  salary        Decimal    @db.Decimal(9, 2)
-  department_id Int
-  department    department @relation(fields: [department_id], references: [department_id], onDelete: NoAction, onUpdate: NoAction, map: "FK_DepartmentRole")
-  employee      employee[]
-
-  @@index([department_id], map: "FK_DepartmentRole")
+model customers {
+  id                Int            @id @default(autoincrement())
+  first_name        String         @db.Text
+  last_name         String         @db.Text
+  phone_number      Int
+  address           String         @db.Text
+  email_address     String         @db.Text
+  pass_word         String         @db.Text
+  appointment_timer Int?
+  is_deleted        Boolean?       @default(false)
+  appointments      appointments[]
 }
