@@ -14,16 +14,16 @@ async function main() {
 
 
     // query that creates a new employee
-    await prisma.employee.create({
-      data: {
-        first_name: "Sinbad",
-        last_name: "Morpheus Jones",
-        role_id: 1,
-      }
-    })  
+    // await prisma.employee.create({
+    //   data: {
+    //     first_name: "Sinbad",
+    //     last_name: "Morpheus Jones",
+    //     role_id: 1,
+    //   }
+    // })  
 
       // query returns all employee from the employee table
-  const allEmployees = await prisma.employee.findMany()
+  const allEmployees = await prisma.customers.findMany()
   console.dir(allEmployees, {depth: null});
 
 }
