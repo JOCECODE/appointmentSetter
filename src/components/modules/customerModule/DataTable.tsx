@@ -1,10 +1,29 @@
-import React, {useState} from "react";
+import React, {useState, useEffect} from "react";
 // the wanted syntax for the api call from the database
 // import Api from "../../../utils/Api";
 
 export default function DataTable() {
 
-    // adjust width as needed for each row
+    const [data, setData] = useState()
+    const [isLoading, setLoading] = useState(true);
+
+    useEffect( () => {
+        setLoading(true)
+        fetch('api/customers')
+        .then((res) => res.json())
+        .then((data) => {
+            setData(data);
+            setLoading(false);
+            console.table(data);
+        })
+    }, [])
+    if (!data) return( <p>No Profile Data</p> )
+    if (isLoading) return <p>Loading...</p>
+    
+    
+
+
+         // adjust width as needed for each row
     const headings = [
         { name: "FirstName", width: "10%" },
         { name: "lastName", width: "10%" },
@@ -56,27 +75,28 @@ export default function DataTable() {
         <tbody>
             {/* as of right now the data hard coded eventually it will display the 
                 data that is bein returned from the database */}
-            {users.map(({firstName, lastName, phoneNumber, address, reminder, appointments}) => {
+            {data.map(({first_name, last_name, phone_number, address, appointment_timer, appointments}) => {
                 return(
-                   <tr key={firstName}>
-                        <td data-th="firstName">
-                            {firstName}
+                   <tr key={first_name}>
+                        <td data-th="first_name">
+                            {first_name}
                         </td>
-                        <td data-th="lastName">
-                            {lastName}
+                        <td data-th="last_name">
+                            {last_name}
                         </td>
-                        <td data-th="phoneNumber">
-                            {phoneNumber}
+                        <td data-th="phone_number">
+                            {phone_number}
                         </td>
                         <td data-th="address">
                             {address}
                         </td>
-                        <td data-th="reminder">
-                            {reminder}
+                        <td data-th="apppointment_timer">
+                            {appointment_timer}
                         </td>
                         <td data-th="appointments">
-                            {`${appointments[0]} ${appointments[1]} ${appointments[2]}`}
+                            {appointments}
                         </td>
+                        
                    </tr>
                 );
             })}

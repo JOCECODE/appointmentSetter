@@ -31,7 +31,7 @@
     "typescript": "^4.7.4"
   },
   "prisma": {
-    "seed": "node --loader ts-node/esm ./prisma/seed.tsx"
+    "seed": "ts-node --compiler-options {\"module\":\"CommonJS\"} prisma/seed.tsx"
   },
-  "type":"commonjs"
+  "type": "commonjs"
 }
