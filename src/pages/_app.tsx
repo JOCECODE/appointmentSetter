@@ -3,14 +3,16 @@ import "../styles/footer.css";
 import "../styles/about.css";
 import 'react-modern-calendar-datepicker/lib/DatePicker.css';
 import Navbar from "../components/Navbar";
-
-function MyApp({ Component, pageProps }) {
+import { SessionProvider } from "next-auth/react"
+export default function MyApp({
+          Component,
+          pageProps: { session, ...pageProps },
+        }) {
   return (
-  <>
-  <Navbar/>
-  <Component {...pageProps} />
-  </>
-  );
+    <SessionProvider session={pageProps.session}>
+      <Navbar/>
+      <Component {...pageProps} />
+    </SessionProvider>
+  )
 }
 
-export default MyApp;
